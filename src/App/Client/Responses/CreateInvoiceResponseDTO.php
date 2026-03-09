@@ -9,15 +9,15 @@ namespace Dots\WayForPay\App\Client\Responses;
 
 class CreateInvoiceResponseDTO extends WayForPayResponseDTO
 {
-    protected ?string $invoiceUrl;
+    protected ?string $url;
 
     protected ?string $reason;
 
     protected ?string $reasonCode;
 
-    public function getInvoiceUrl(): ?string
+    public function getUrl(): ?string
     {
-        return $this->invoiceUrl;
+        return $this->url;
     }
 
     public function getReason(): ?string

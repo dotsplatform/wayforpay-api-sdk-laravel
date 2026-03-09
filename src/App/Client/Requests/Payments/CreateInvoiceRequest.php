@@ -10,7 +10,6 @@ namespace Dots\WayForPay\App\Client\Requests\Payments;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\CreateInvoiceRequestDTO;
 use Dots\WayForPay\App\Client\Requests\PostWayForPayRequest;
 use Dots\WayForPay\App\Client\Responses\CreateInvoiceResponseDTO;
-use Illuminate\Support\Facades\Log;
 use RuntimeException;
 use Saloon\Http\Response;
 
@@ -38,9 +37,6 @@ class CreateInvoiceRequest extends PostWayForPayRequest
 
     public function createDtoFromResponse(Response $response): CreateInvoiceResponseDTO
     {
-        Log::warning('response DD', [
-            $response->json(),
-        ]);
         return CreateInvoiceResponseDTO::fromResponse($response);
     }
 }
