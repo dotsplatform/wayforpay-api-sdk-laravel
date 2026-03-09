@@ -13,14 +13,17 @@ use Dots\WayForPay\App\Client\Exceptions\WayForPayException;
 use Dots\WayForPay\App\Client\Requests\Payments\ChargePaymentRequest;
 use Dots\WayForPay\App\Client\Requests\Payments\CheckStatusRequest;
 use Dots\WayForPay\App\Client\Requests\Payments\Complete3DSRequest;
+use Dots\WayForPay\App\Client\Requests\Payments\CreateInvoiceRequest;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\ChargePaymentRequestDTO;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\CheckStatusRequestDTO;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\Complete3DSRequestDTO;
+use Dots\WayForPay\App\Client\Requests\Payments\DTO\CreateInvoiceRequestDTO;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\RefundPaymentRequestDTO;
 use Dots\WayForPay\App\Client\Requests\Payments\DTO\SettlePaymentRequestDTO;
 use Dots\WayForPay\App\Client\Requests\Payments\RefundPaymentRequest;
 use Dots\WayForPay\App\Client\Requests\Payments\SettlePaymentRequest;
 use Dots\WayForPay\App\Client\Responses\CheckStatusResponseDTO;
+use Dots\WayForPay\App\Client\Responses\CreateInvoiceResponseDTO;
 use Dots\WayForPay\App\Client\Responses\ErrorResponseDTO;
 use Dots\WayForPay\App\Client\Responses\PaymentResponseDTO;
 use Dots\WayForPay\App\Client\Responses\RefundResponseDTO;
@@ -38,6 +41,14 @@ class WayForPayConnector extends Connector
         private readonly WayForPayAuthDTO $authDto,
         private readonly bool $testMode = false,
     ) {
+    }
+
+    /**
+     * @throws WayForPayException
+     */
+    public function createInvoice(CreateInvoiceRequestDTO $dto): CreateInvoiceResponseDTO
+    {
+        return $this->send(new CreateInvoiceRequest($dto))->dto();
     }
 
     /**
@@ -112,6 +123,7 @@ class WayForPayConnector extends Connector
 
         return $host;
     }
+
 
     public function getRequestException(Response $response, ?Throwable $senderException): ?Throwable
     {
