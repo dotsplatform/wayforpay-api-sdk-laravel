@@ -1,0 +1,1 @@
+{"version":2,"defects":{"Tests\\WayForPaySignatureGeneratorTest::testGenerateChargeSignature":7},"times":{"Tests\\WayForPaySignatureGeneratorTest::testGenerateSignature":0.002,"Tests\\WayForPaySignatureGeneratorTest::testGenerateChargeSignature":0,"Tests\\WayForPaySignatureGeneratorTest::testGenerateChargeSignatureWithSingleProduct":0}}
