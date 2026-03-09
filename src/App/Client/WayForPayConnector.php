@@ -39,7 +39,6 @@ class WayForPayConnector extends Connector
 
     public function __construct(
         private readonly WayForPayAuthDTO $authDto,
-        private readonly bool $testMode = false,
     ) {
     }
 
@@ -99,11 +98,6 @@ class WayForPayConnector extends Connector
     public function getSignatureGenerator(): WayForPaySignatureGenerator
     {
         return new WayForPaySignatureGenerator();
-    }
-
-    public function isTestMode(): bool
-    {
-        return $this->testMode;
     }
 
     protected function defaultHeaders(): array
