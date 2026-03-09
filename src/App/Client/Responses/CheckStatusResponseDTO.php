@@ -41,7 +41,7 @@ class CheckStatusResponseDTO extends WayForPayResponseDTO
 
     protected ?string $reasonCode;
 
-    protected ?int $settlementDate;
+    protected ?string $settlementDate;
 
     protected ?float $settlementAmount;
 
