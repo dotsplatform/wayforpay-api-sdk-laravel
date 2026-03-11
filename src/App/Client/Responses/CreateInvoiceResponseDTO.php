@@ -10,6 +10,7 @@ namespace Dots\WayForPay\App\Client\Responses;
 class CreateInvoiceResponseDTO extends WayForPayResponseDTO
 {
     protected ?string $url;
+    
 
     protected ?string $reason;
 
