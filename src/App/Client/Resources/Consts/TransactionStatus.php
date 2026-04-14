@@ -15,8 +15,9 @@ enum TransactionStatus: string
     case REFUNDED = 'Refunded';
     case VOIDED = 'Voided';
     case EXPIRED = 'Expired';
-    case CREATED = 'Created';
     case PENDING = 'Pending';
+    case WAITING_AUTH_COMPLETE = 'WaitingAuthComplete';
+    case REFUND_IN_PROCESSING = 'RefundInProcessing';
 
     public function isApproved(): bool
     {
@@ -46,5 +47,15 @@ enum TransactionStatus: string
     public function isExpired(): bool
     {
         return $this === self::EXPIRED;
+    }
+
+    public function isWaitingAuthComplete(): bool
+    {
+        return $this === self::WAITING_AUTH_COMPLETE;
+    }
+
+    public function isRefundInProcessing(): bool
+    {
+        return $this === self::REFUND_IN_PROCESSING;
     }
 }
