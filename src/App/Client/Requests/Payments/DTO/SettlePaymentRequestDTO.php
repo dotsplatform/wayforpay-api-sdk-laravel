@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of SettlePaymentRequestDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
@@ -21,6 +22,8 @@ class SettlePaymentRequestDTO extends DTO
     protected float $amount;
 
     protected Currency $currency;
+
+    protected int $apiVersion;
 
     public function getMerchantAccount(): string
     {
@@ -45,6 +48,11 @@ class SettlePaymentRequestDTO extends DTO
     public function getCurrency(): Currency
     {
         return $this->currency;
+    }
+
+    public function getApiVersion(): int
+    {
+        return $this->apiVersion;
     }
 
     public function toRequestData(): array
