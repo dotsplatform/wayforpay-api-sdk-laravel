@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of RefundPaymentRequestDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
@@ -23,6 +24,8 @@ class RefundPaymentRequestDTO extends DTO
     protected Currency $currency;
 
     protected string $comment;
+
+    protected int $apiVersion;
 
     public function getMerchantAccount(): string
     {
@@ -52,6 +55,11 @@ class RefundPaymentRequestDTO extends DTO
     public function getComment(): string
     {
         return $this->comment;
+    }
+
+    public function getApiVersion(): int
+    {
+        return $this->apiVersion;
     }
 
     public function toRequestData(): array
