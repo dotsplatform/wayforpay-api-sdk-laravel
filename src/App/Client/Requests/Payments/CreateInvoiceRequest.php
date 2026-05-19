@@ -15,7 +15,7 @@ use Saloon\Http\Response;
 
 class CreateInvoiceRequest extends PostWayForPayRequest
 {
-    private const ENDPOINT = '/pay?behavior=offline';
+    private constst ENDPOINT = '/pay?behavior=offline';
 
     public function __construct(
         private readonly CreateInvoiceRequestDTO $dto,

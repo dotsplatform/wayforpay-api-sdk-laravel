@@ -110,9 +110,9 @@ class WayForPayConnector extends Connector
 
     public function resolveBaseUrl(): string
     {
-        $host = config('wayforpay.hosts.api');
+        $host = config('wayforpay.hosts.secure');
         if (! is_string($host)) {
-            throw new RuntimeException('Invalid WayForPay API host');
+            throw new RuntimeException('Invalid WayForPay Secure host');
         }
 
         return $host;
