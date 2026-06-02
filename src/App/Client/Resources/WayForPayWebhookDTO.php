@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of WayForPayWebhookDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
@@ -80,6 +81,11 @@ class WayForPayWebhookDTO extends DTO
     public function getAuthCode(): ?string
     {
         return $this->authCode;
+    }
+
+    public function getProcessingDate(): ?int
+    {
+        return $this->processingDate;
     }
 
     public function getCardPan(): ?string
